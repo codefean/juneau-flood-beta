@@ -1,0 +1,401 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Flood Tracker Container */
+.flood-tracker {
+  text-align: center;
+  padding: 20px;
+}
+
+.flood-forecast-banner {
+  background-color: #c90000;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: -32px;
+
+}
+
+/* Apply different margin for smaller screens (mobile) */
+@media (max-width: 767px) { /* Adjust breakpoint as needed */
+  .flood-forecast-banner {
+    margin-top: -27px;
+  }
+}
+
+
+.flood-tracker h1 {
+  color: #00509e;
+  font-size: 2rem;
+  margin-bottom: 1px;
+  margin-top: -2px;
+}
+
+.flood-tracker h2 {
+  color: #154f89;
+  font-size: 1.8rem;
+  margin-bottom: 1px;
+  margin-top: -2px;
+}
+
+
+.flood-tracker h4 {
+  color: #00509e;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: -1px;
+  margin-top: -10px;
+}
+
+/* Content Layout */
+.flood-content, .lake-level-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image Container */
+.image-container {
+  flex: 2;
+  max-width: 70%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flood-image, .hydrograph-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  cursor: pointer;
+}
+
+
+/* Interactive Markers */
+.info-marker {
+  position: absolute;
+  background: #cf0000d9;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.info-marker:hover {
+  background: #466aea;
+  transform: scale(1.1);
+}
+
+.info-box {
+  position: absolute;
+  background: #fde3e3f5;
+  color: #000000;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 150px;
+  max-width: 90%;
+  width: auto;
+  text-align: left;
+  white-space: normal;
+  z-index: 10;
+  cursor: default;
+  border-left: 4px solid #9e0005;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  word-wrap: break-word;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 200px; /* Limit width */
+  overflow-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .info-box {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 120px; /* Slightly smaller minimum width */
+  }
+}
+
+@media (max-width: 320px) {
+  .info-box {
+    font-size: 11px;
+    padding: 5px 8px;
+    min-width: 100px;
+  }
+}
+
+
+
+/* Prevents info-box from closing when clicked */
+.info-box:hover {
+  pointer-events: auto;
+}
+
+/* Tooltip Box Above Info Card */
+.tooltip-box {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9e0000;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none; /* Tooltip doesn't interfere with interactions */
+  transform: translate(-50%, -100%); /* Center and position above the marker */
+}
+
+.tooltip.visible {
+  opacity: 1;
+}
+
+/* Persistent Info Box for Clicked Markers */
+.marker-info-box {
+  background: #e3f2fd;
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 4px solid #00509e;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .flood-content, .lake-level-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .image-container, .image-wrapper {
+    max-width: 100%;
+  }
+
+  .info-card {
+    max-width: 90%;
+  }
+
+  .flood-tracker h1 {
+    font-size: 1.8rem;
+  }
+
+  .info-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .info-marker {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flood-tracker {
+    padding: 15px;
+  }
+
+  .flood-tracker h1 {
+    font-size: 1.5rem;
+  }
+
+  .flood-image, .hydrograph-image {
+    max-width: 100%;
+  }
+
+  .info-card {
+    padding: 15px;
+  }
+
+  .info-marker {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+.detail-card {
+  background: #f5f5f5; /* Light gray for card background */
+  border: 1px solid #ffffff; /* Subtle border for definition */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px 20px; /* Adequate padding */
+  margin: 5px auto; /* Center the card and space it below the image */
+  margin-top: -20px;
+  max-width: 560px; /* Limit card width */
+  text-align: left; /* Left-aligned text for readability */
+}
+
+.detail-card h2 {
+  color: #1c68b4; /* Strong blue for header */
+  font-size: 1.3rem;
+  margin-bottom: -10px;
+  margin-top: 2px;
+}
+
+.detail-card p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.detail-card ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+
+/* Flood Forecast Card */
+.forecast-card {
+  background: #f5f5f5;
+  border-left: 6px solid #00509e;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forecast-card h2 {
+  color: #00509e;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.forecast-card p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Ensure markers are positioned correctly */
+.modal .info-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.black-text {
+  color: black;
+}
+
+.more-data-button {
+  display: block;
+  background-color: #00509e; /* Blue color */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px auto 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  margin-top: 15px;
+}
+
+.more-data-button:hover {
+  background-color: #9d0303; /* Darker blue on hover */
+  transform: scale
+(1.05);}
+
+/* Responsive Scaling for Mobile */
+@media (max-width: 768px) {
+  .flood-tracker h4 {
+    font-size: 1rem; /* Slightly smaller for tablets and small screens */
+    margin-top: -5px; /* Adjust margin for better spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .flood-tracker h4 {
+    font-size: 1rem; /* Even smaller for mobile phones */
+    margin-top: 0; /* Removes negative margin for better spacing */
+    text-align: center; /* Centers text on small screens */
+    margin-top: -5px;
+  }
+}

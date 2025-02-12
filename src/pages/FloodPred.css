@@ -1,0 +1,107 @@
+/* Flood Prediction Section */
+.flood-prediction {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+
+
+.flood-prediction h1 {
+  color: #000000;
+  font-size: 2rem;
+  margin-bottom: 1px;
+  margin-top: -2px;
+}
+
+.flood-prediction h2 {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-bottom: -15px;
+}
+
+
+.flood-prediction h4 {
+  color: #000000;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: -1px;
+  margin-top: -10px;
+}
+
+.flood-pred-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.flood-pred-card {
+  background: rgb(235, 241, 249);
+  border-left: 5px solid #00509e;
+  border-right: 5px solid #00509e;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 200px;
+  max-width: 550px;
+  width: 100%;
+}
+
+
+/* Adjustments for better responsiveness */
+@media (max-width: 768px) {
+  .flood-pred-details {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .flood-pred-card {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .more-info-btn {
+    width: 100%;
+    max-width: 250px; /* Ensures button doesn't stretch too much */
+    text-align: center;
+  }
+}
+
+.more-info-btn {
+  display: inline-block;
+  background-color: #1c68b4;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  min-width: none;
+  max-width: 200px;
+}
+
+.more-info-btn:hover {
+  background-color: #9d0303;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flood-pred-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .more-info-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
