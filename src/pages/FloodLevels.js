@@ -261,9 +261,6 @@ useEffect(() => {
     }
   };
 
-  const dismissCard = (id) => {
-    setWaterLevels((prevLevels) => prevLevels.filter((level) => level.id !== id));
-  };
 
   return (
     <div>
@@ -319,9 +316,6 @@ useEffect(() => {
           <div>
   {waterLevels.map((level) => (
     <div key={level.id} className="level-card">
-      <button className="close-button" onClick={() => dismissCard(level.id)}>
-        ×
-      </button>
       <h3>
         <strong>{level.name}</strong>
       </h3>

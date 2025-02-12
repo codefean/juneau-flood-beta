@@ -61,28 +61,7 @@ header h1 {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.level-card .close-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 20px;
-  height: 20px;
-  background-color: #0044ffa1;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
-.level-card .close-button:hover {
-  background-color: #cc0000;
-  transform: scale(1.1);
-}
 
 .search-container {
   width: 310px; /* Default width for large screens */
@@ -174,6 +153,20 @@ header h1 {
     top: calc(100% + 10px); /* Positions it directly below the header with spacing */
     left: 50%;
     z-index: 1000;
+  }
+}
+
+/* Hide the menu toggle button on larger screens */
+@media (min-width: 769px) {
+  .menu-toggle-button {
+    display: none !important;
+  }
+}
+
+/* Show it on smaller screens */
+@media (max-width: 768px) {
+  .menu-toggle-button {
+    display: block !important;
   }
 }
 

@@ -24,12 +24,12 @@ const FloodInfoPopup = () => {
       <div className="flood-popup-box">
         <h2>Welcome to the Flood Levels Map</h2>
   
-        <p>This interactive tool helps you understand flooding in the Mendenhall Valley.</p>
+        <p>This interactive tool helps you plan for flooding in the Mendenhall Valley. For the most up to date flood info check the National Weather Service page HERE</p>
   
         <div className="popup-info">
-          <p><strong>📍Search Your Address:</strong> Check if your location is in a flood-prone zone.</p>
-          <p><strong> 🔎 Explore Flood Levels:</strong> See various flood maps with water depth (-/+). </p>
-          <p><strong> 🔮 Forecasted Flood Potential:</strong> See an <em>estimate</em> flood stage from available data.</p>
+          <p><strong>Search Your Address:</strong> Check if your location is in a flood-prone zone.</p>
+          <p><strong>Explore Flood Levels:</strong> See various flood maps with water depth (-/+). </p>
+          <p><strong>Forecasted Flood Potential:</strong> See an <em>estimate</em> flood stage from available data.</p>
         </div>
   
         <p className="popup-disclaimer">
