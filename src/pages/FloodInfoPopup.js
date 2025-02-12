@@ -24,7 +24,10 @@ const FloodInfoPopup = () => {
       <div className="flood-popup-box">
         <h2>Welcome to the Flood Levels Map</h2>
   
-        <p>This interactive tool helps you plan for flooding in the Mendenhall Valley. For the most up to date flood info check the National Weather Service page HERE</p>
+        <p>
+            This interactive tool helps you plan for flooding in the Mendenhall Valley. For emergency flood information, refer to the 
+            <a href="https://www.weather.gov/ajk/suicideBasin" target="_blank" rel="noopener noreferrer"> National Weather Service </a>.
+        </p>
   
         <div className="popup-info">
           <p><strong>Search Your Address:</strong> Check if your location is in a flood-prone zone.</p>
