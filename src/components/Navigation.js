@@ -19,12 +19,17 @@ const Navigation = () => {
       <ul className={isMenuOpen ? 'open' : ''}>
         <li>
           <NavLink to="/flood-levels" activeClassName="active-link">
-            Flood Dashboard
+            Flood Map
           </NavLink>
         </li>
         <li>
           <NavLink to="/flood-forecast" activeClassName="active-link">
-            Flood Forecast
+            Flood Forecasting
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/glacier-info" activeClassName="active-link">
+            Suicide Basin
           </NavLink>
         </li>
         <li>
@@ -32,13 +37,8 @@ const Navigation = () => {
              target="_blank" 
              rel="noopener noreferrer"
              className="external-link">
-            Flood Story
+            The Flood Story
           </a>
-        </li>
-        <li>
-          <NavLink to="/glacier-info" activeClassName="active-link">
-            Glacier Info
-          </NavLink>
         </li>
       </ul>
     </nav>

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="header">
       <div>
-        <h1>Mendenhall Glacier Flood Tracker</h1>
+        <h1>Juneau Glacial Flood Dashboard</h1>
       </div>
     </header>
   );
