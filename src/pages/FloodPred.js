@@ -50,7 +50,7 @@ const FloodPred = () => {
       ) : (
         <div className="flood-pred-details">
           <div className="flood-pred-card alert">
-            <h2>NWS Flood Forecast</h2>
+            <h2>National Weather Service Flood Forecast</h2>
             <p>{nwsFloodForecast}</p>
             
             {nwsAlertUrl && (
@@ -61,7 +61,7 @@ const FloodPred = () => {
             
             <div className="more-info-container">
             <a href="https://www.weather.gov/ajk/suicidebasin#" target="_blank" rel="noopener noreferrer">
-            <button className="more-info-btn">More Info</button>
+            <button className="more-info-btn">Full NWS Flood Forecast</button>
             </a>
             </div>
   

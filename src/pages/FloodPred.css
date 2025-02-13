@@ -36,7 +36,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5px;
 }
 
 .flood-pred-card {
@@ -47,8 +46,10 @@
   border-radius: 8px;
   font-size: 1rem;
   min-width: 200px;
-  max-width: 550px;
+  max-width: 1335px;
+  align-items: center;
   width: 100%;
+  margin-left: -10px;
 }
 
 
