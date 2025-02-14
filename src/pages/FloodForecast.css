@@ -18,9 +18,9 @@ body {
 /* Headings */
 .flood-tracker h1 {
   color: #00509e;
-  font-size: 2rem;
-  margin-bottom: 1px;
-  margin-top: 2px;
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .flood-tracker h2 {
@@ -194,7 +194,6 @@ body {
 .flood-stage-menu-wrapper {
   flex: 1;
   display: flex;
-  min-width:200px;
   align-items: stretch;
   justify-content: flex-end;
 }
@@ -209,40 +208,66 @@ body {
   margin-top: 20px;
 }
 
-/* Mendenhall Lake Image Wrapper - Aligns to the Right */
-.mendenhall-lake-wrapper {
-  flex: 2;
-  min-width: 200px; /* Prevents excessive shrinking */
+/* Adjust Lake Level Content to Match Flood Content */
+.lake-level-content {
   display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: stretch; /* Ensure full height consistency */
+  gap: 30px; /* Match flood-content */
+  max-width: 1375px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
 
-/* Mendenhall Lake Image */
-.mendenhall-lake-image {
+/* Ensure Mendenhall Lake Image Aligns Properly */
+.mendenhall-lake-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center like flood-content */
+  align-items: center;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* Flood Stage Menu Alignment */
+.flood-stage-menu-wrapper {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
   .lake-level-content {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Match flood-content */
+    gap: 15px;
+  }
+
+  .mendenhall-lake-wrapper, 
+  .flood-stage-menu-wrapper {
+    max-width: 90%; /* Allow full width */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .lake-level-content {
+    flex-direction: column;
     gap: 15px;
   }
 
   .mendenhall-lake-wrapper,
   .flood-stage-menu-wrapper {
-    max-width: 100%; /* Allow full width */
-    justify-content: center;
-    align-items: center;
-    min-width: 700px;
+    max-width: 100%;
   }
+  
 
   .flood-stage-menu-wrapper > div {
-    width: 100%; /* Ensure full width */
+    width: 95%; /* Ensure full width */
     justify-content: flex-start;
     margin-left: 0; /* Reset margin for small screens */
   }

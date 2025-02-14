@@ -4,11 +4,14 @@ import FloodPred from "./FloodPred";
 import Tooltip from "./Tooltip"; // Import Tooltip component
 import FloodStageMenu from "./StageInfo"; 
 
+// cd /Users/seanfagan/Desktop/juneau-flood-beta
+
 const FloodPrediction = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [hydroGraphUrl, setHydroGraphUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [activeInfo, setActiveInfo] = useState(null);
+  const [showFloodPred, setShowFloodPred] = useState(true); 
 
   useEffect(() => {
     const updateImages = () => {
@@ -50,22 +53,23 @@ const FloodPrediction = () => {
 
   const markers = {
     suicideBasin: [
-      //{ top: "75%", left: "82%", text: "1. Check to see when the image was last updated. This website pulls the most recent image." },
-      //{ top: "1.5%", left: "79%", text: "2. The latest glacial pool elevation in meters." },
-      //{ top: "52.5%", left: "18.5%", text: "3. Years indicate annual peak water levels." },
-      //{ top: "70%", left: "48.5%", text: "4. Movement of ice can impact perceived water levels." },
+      { top: "78%", left: "82.5%", text: "1. Check to see when the image was last updated. This website pulls the most recent image." },
+      { top: "5%", left: "80%", text: "2. The latest glacial pool elevation in meters." },
+      { top: "55%", left: "19.5%", text: "3. Years indicate annual peak water levels." },
+      { top: "70%", left: "48.5%", text: "4. Movement of ice can impact perceived water levels." },
     ],
     mendenhallLake: [
-      //{ top: "93%", left: "46%", text: "Check to see when the graph was created. This website pulls the latest graph." },
-      //{ top: "16%", left: "50%", text: "Last recorded water level at Mendenhall Lake" },
-      //{ top: "21%", left: "47.5%", text: "Current flood stage if the GLOF occurred. 9ft is the lowest flood stage. For all flood stages click here." },
-      //{ top: "79%", left: "92%", text: "Today's observation." },
+      { top: "97%", left: "47%", text: "Check to see when the graph was created. This website pulls the latest graph." },
+      { top: "19%", left: "50%", text: "Last recorded water level at Mendenhall Lake" },
+      { top: "23.5%", left: "48.5%", text: "Current flood stage if the GLOF occurred. 9ft is the lowest flood stage. For all flood stages click here." },
+      { top: "75%", left: "90%", text: "Today's observation." },
     ],
   };
 
   return (
     <div className="flood-tracker" onClick={closeInfoBox}>
-      <FloodPred />
+      {showFloodPred && <FloodPred onClose={() => setShowFloodPred(false)} />} 
+     
       <div className="flood-content">
   <div className="image-pair-container">
     
