@@ -35,8 +35,8 @@ const FloodStageTable = () => {
             <td>Moderate Flood</td>
             <td>10 - 14 ft</td>
             <td>
-              <strong>10 ft:</strong>TBD <br />
-              <strong>11 ft:</strong> TBD <br />
+              <strong></strong>TBD <br />
+              <strong></strong> TBD <br />
             </td>
           </tr>
 
@@ -45,7 +45,7 @@ const FloodStageTable = () => {
             <td>Major Flood</td>
             <td>14+ ft</td>
             <td>
-              <strong>14 ft:</strong> TBD <br />
+              <strong></strong> TBD <br />
             </td>
           </tr>
         </tbody>
