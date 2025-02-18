@@ -140,6 +140,7 @@ header h1 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  z-index: 1;
 }
 
 .menu-toggle-button:hover {
@@ -182,6 +183,7 @@ header h1 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1;
 }
 
 .style-toggle-button:hover {
