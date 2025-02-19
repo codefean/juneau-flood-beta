@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import FloodLevels from './pages/FloodLevels';
 import FloodForecast from './pages/FloodForecast';
+import FloodEvents from './pages/FloodEvents';
 import GlacierInfo from './pages/GlacierInfo';
 
 // Custom hook for setting the document title
@@ -25,6 +26,11 @@ const FloodPredictionPage = () => {
   return <FloodForecast />;
 };
 
+const FloodEventsPage = () => {
+  useDocumentTitle('Flood Events');
+  return <FloodEvents />;
+};
+
 const GlacierInfoPage = () => {
   useDocumentTitle('Glacier Information');
   return <GlacierInfo />;
@@ -40,6 +46,7 @@ const App2 = () => {
           <Route path="/" element={<Navigate to="/flood-levels" />} />
           <Route path="/flood-levels" element={<FloodLevelsPage />} />
           <Route path="/flood-forecast" element={<FloodPredictionPage />} />
+          <Route path="/flood-events" element={<FloodEventsPage />} />
           <Route path="/glacier-info" element={<GlacierInfoPage />} />
         </Routes>
       </div>

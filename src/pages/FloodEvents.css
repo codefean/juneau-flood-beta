@@ -1,0 +1,118 @@
+.flood-events-container {
+  padding: 20px;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  text-align: center;
+}
+
+/* Scatter Plot and Table Layout */
+.visuals-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.top5-table {
+  width: 35%;
+}
+
+.top5-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.top5-table th, .top5-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.top5-table th {
+  background-color: #f4f4f4;
+}
+
+/* Flood Table */
+.flood-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.flood-table th,
+.flood-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.flood-table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flood-table th.sortable:hover {
+  background-color: #e0e0e0;
+}
+
+.flood-table th::after {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.scatter-chart-container text {
+  fill: #000000 !important;  /* Ensure text is dark */
+  font-family: Arial, sans-serif;
+}
+
+.scatter-chart-container h3 {
+  text-align: center;  /* Centers text horizontally */
+  margin: 0;           /* Removes any default margins */
+  padding: 1px 0;     /* Adds padding above and below the heading */
+}
+
+.flood-events-container h2 {
+  text-align: center;  /* Centers text horizontally */
+  margin: 0;           /* Removes any default margins */
+  padding: 10px 0;     /* Adds padding above and below the heading */
+  font-size: 2rem;     /* Adjust text size (use rem for better scaling) */
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  text-align: center;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
+}
