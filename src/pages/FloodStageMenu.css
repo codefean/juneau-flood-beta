@@ -33,6 +33,7 @@
   box-sizing: border-box; /* Include padding in width calculation */
   max-height: 150px; /* Restrict height */
   overflow-y: auto; /* Enable scrolling for long content */
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Color coding for different flood stages */

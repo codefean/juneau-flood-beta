@@ -7,6 +7,14 @@
   overflow-x: hidden;
 }
 
+body {
+  margin: 0;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Flood Cards Wrapper */
 .flood-cards-container {
@@ -33,6 +41,7 @@
   margin-top: 0;
   margin-bottom: 5px;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Flood Card - Unified Styling */
@@ -48,6 +57,7 @@
   line-height: 1.2;
   margin-bottom: 0;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Hover Effect for Better User Interaction */
@@ -72,6 +82,7 @@
   font-size: 1.3rem;
   color: #000000;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Card Paragraphs */
@@ -79,6 +90,7 @@
   font-size: 1rem;
   color: #000000;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Responsive Design */
