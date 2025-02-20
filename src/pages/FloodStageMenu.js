@@ -34,12 +34,9 @@ const FloodStageMenu = ({ setFloodLevelFromMenu }) => {
         <h4>Minor Flood Stage (9 - 10ft)</h4>
         {expanded === 'minor' && (
           <div className="accordion-content">
-            <p>
-              <strong>9 ft:</strong> Water starts to cover Skaters Cabin Road.
-            </p>
-            <p>
-              <strong>9.5 ft:</strong> Areas along View Dr will start to flood; minor flooding of yards. ~0.5 feet of water over the Skaters Cabin Road. Campsite 7 will be flooded.
-            </p>
+            <p><strong>9 ft:</strong> Water starts covering Skaters Cabin Road.</p>
+            <p><strong>9.5 ft:</strong> Minor yard flooding on View Dr; 0.5 ft of water on Skaters Cabin Road. Campsite 7 floods.</p>
+            <p><strong>10 ft:</strong> Mendenhall Campground low areas submerged up to 3 ft. Skaters Cabin Road under 1.5 ft of water. Some sections of West Glacier Trail impassable.</p>
           </div>
         )}
       </div>
@@ -52,15 +49,10 @@ const FloodStageMenu = ({ setFloodLevelFromMenu }) => {
         <h4>Moderate Flood Stage (10 - 14ft)</h4>
         {expanded === 'moderate' && (
           <div className="accordion-content">
-            <p>
-              <strong>10 ft:</strong> Mendenhall Campground floods. Significant flooding around Mendenhall Lake, campground evacuation, and up to 3 ft of water in View Dr yards.
-            </p>
-            <p>
-              <strong>11 ft:</strong> View Dr impassable, severe flooding, bank erosion below Back Loop Bridge, hazardous river navigation, and backyard flooding on Meander Way.
-            </p>
-            <p>
-              <strong>13 ft:</strong> Backyards flood on north View Dr (1-4 ft). Flooding at Meander Way, Stream Ct, Northland St. Storm drain backups along Riverside and Riverwood Dr. Severe bank erosion.
-            </p>
+            <p><strong>11 ft:</strong> View Dr impassable. Severe bank erosion below Back Loop Bridge. Hazardous river navigation.</p>
+            <p><strong>12.5 ft:</strong> Meander Way (river side) under 2-4 ft of water. Flooding at Dredge Lake Trail System. Severe bank erosion.</p>
+            <p><strong>13 ft:</strong> View Dr backyards flood (1-4 ft). Meander Way, Stream Ct, and Northland St begin flooding. Storm drain backups on Riverside and Riverwood Dr.</p>
+            <p><strong>14 ft:</strong> Northland St, Turn St, Parkview & Center Ct flood. Meander Way under 1-2 ft of water.</p>
           </div>
         )}
       </div>
@@ -73,12 +65,9 @@ const FloodStageMenu = ({ setFloodLevelFromMenu }) => {
         <h4>Major Flood Stage (14ft+)</h4>
         {expanded === 'major' && (
           <div className="accordion-content">
-            <p>
-              <strong>14 ft:</strong>  Flooding begins on Northland St, Turn St, Stephen Richards Memorial Dr, Parkview & Center Ct. Some homes begin flooding. Backyards along Killewich Dr and Riverside Dr flood. Severe flooding on View Dr.
-            </p>
-            <p>
-              <strong>15 ft:</strong> ~2 ft of water on Killewich Dr. Backyards flood on south Marion Dr. ~1.5 ft of water on Rivercourt Way, Lakeview Ct, Center Ct, Parkview Ct, Turn St & Northland St. Riverside Dr at Tournure St, 1 ft of water.
-            </p>
+            <p><strong>14.5 ft:</strong> Meander Way under 2-4 ft of water. Significant flooding on View Dr.</p>
+            <p><strong>15 ft:</strong> Killewich Dr covered with up to 2 ft of water. Marion Dr backyards flood. 1.5 ft of water on Rivercourt Way, Lakeview Ct, Center Ct, Parkview Ct, Turn St & Northland St.</p>
+            <p><strong>15.5+ ft:</strong> Riverside Dr at Tournure St under 1 ft of water. Severe flooding impacts multiple homes.</p>
           </div>
         )}
       </div>
