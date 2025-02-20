@@ -1,0 +1,174 @@
+import React, { useState, useEffect } from "react";
+import Papa from "papaparse";
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
+import "./FloodGraph.css";
+
+const S3_CSV_URL = "https://flood-events.s3.us-east-2.amazonaws.com/FloodEvents.csv";
+
+const getFloodStageColor = (stage) => {
+  if (stage < 9) return "#d4e157"; // Action Stage
+  if (stage >= 9 && stage < 10) return "#fdae61"; // Minor Flood
+  if (stage >= 10 && stage < 14) return "#d73027"; // Moderate
+  return "#7b3294"; // Major Flood
+};
+
+const FloodGraph = () => {
+  const [scatterData, setScatterData] = useState([]);
+  const [eventCardData, setEventCardData] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [hoveredPoint, setHoveredPoint] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [clickedOnPoint, setClickedOnPoint] = useState(false);
+
+  useEffect(() => {
+    fetch(S3_CSV_URL)
+      .then((response) => response.text())
+      .then((csvText) => {
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            setLoading(false);
+
+            let scatterDataProcessed = [];
+            let eventCardDataProcessed = [];
+
+            result.data.forEach((row) => {
+              const id = row["Crest Date"] + row["Crest Stage D.S. Gage (ft)"]; // Unique identifier
+
+              scatterDataProcessed.push({
+                x: row["Crest Date"],
+                y: parseFloat(row["Crest Stage D.S. Gage (ft)"]),
+                fill: getFloodStageColor(parseFloat(row["Crest Stage D.S. Gage (ft)"])),
+                id,
+              });
+
+              eventCardDataProcessed.push({
+                id,
+                releaseDate: row["Release Start Date"] || "Unknown",
+                releaseStage: row["Release Stage D.S. Gage (ft)"] || "Unknown",
+                crestDate: row["Crest Date"],
+                crestStage: row["Crest Stage D.S. Gage (ft)"],
+                impacts: row["Impacts"] || "No impacts reported",
+              });
+            });
+
+            scatterDataProcessed = scatterDataProcessed.sort((a, b) => new Date(a.x) - new Date(b.x));
+
+            setScatterData(scatterDataProcessed);
+            setEventCardData(eventCardDataProcessed);
+          },
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading CSV from S3:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  const handlePointClick = (dataPoint) => {
+    const matchingEvent = eventCardData.find((event) => event.id === dataPoint.id);
+    setSelectedEvent(matchingEvent);
+    setClickedOnPoint(true);
+  };
+
+  const handleBackgroundClick = (e) => {
+    if (!clickedOnPoint && !e.target.closest(".event-info-card") && !e.target.closest(".scatter-chart-wrapper")) {
+      setSelectedEvent(null);
+    }
+    setClickedOnPoint(false);
+  };
+
+  const handleMouseEnter = (data) => {
+    setHoveredPoint(data.id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredPoint(null);
+  };
+
+  const handleEventCardClick = () => {
+    setSelectedEvent(null);
+  };
+
+  // Custom circle shape for scatter points
+  const renderCustomShape = (props) => {
+    const { cx, cy, fill, payload } = props;
+    const isHovered = hoveredPoint === payload.id;
+    return <circle cx={cx} cy={cy} r={isHovered ? 8 : 5} fill={fill} strokeWidth={isHovered ? 2 : 1} />;
+  };
+
+  return (
+    <div className="flood-graph-container" onClick={handleBackgroundClick}>
+      <div className={`scatter-chart-wrapper ${selectedEvent ? "shift-left" : ""}`}>
+        <h3 className="flood-graph-title">Mendenhall Glacial Lake Outburst Flood Events Over Time</h3>
+        <ResponsiveContainer width="100%" height={400}>
+          <ScatterChart margin={{ top: 20, right: 30, left: 10, bottom: 30 }}>
+            <CartesianGrid />
+            <XAxis
+              type="category"
+              dataKey="x"
+              name="Peak Water Level Date"
+              label={{
+                value: "Peak Water Level Date",
+                position: "bottom",
+                style: { fontWeight: "bold", fill: "black" },
+              }}
+            />
+            <YAxis
+              type="number"
+              dataKey="y"
+              name="Peak Water Level Stage (ft)"
+              label={{
+                value: "Peak Water Level Stage (ft)",
+                angle: -90,
+                position: "outsideLeft",
+                dx: -25,
+                style: { fontWeight: "bold", fill: "black" },
+              }}
+            />
+            <Scatter
+              name="Flood Events"
+              data={scatterData}
+              shape={renderCustomShape} // Use custom shape
+              onClick={(value) => handlePointClick(value)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              cursor="pointer"
+            />
+          </ScatterChart>
+        </ResponsiveContainer>
+      </div>
+
+      {selectedEvent && (
+        <div className="event-info-card" onClick={handleEventCardClick}>
+          <h3 className="event-title">GLOF Event Info</h3>
+          <p>
+            <strong>Release Start Date:</strong> {selectedEvent.releaseDate}
+          </p>
+          <p>
+            <strong>Release Start Stage:</strong> {selectedEvent.releaseStage}
+          </p>
+          <p>
+            <strong>Peak Water Level Date:</strong> {selectedEvent.crestDate}
+          </p>
+          <p>
+            <strong>Peak Water Level:</strong> {selectedEvent.crestStage}
+          </p>
+          <p>
+            <strong>NWS Impacts:</strong> {selectedEvent.impacts}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default FloodGraph;
