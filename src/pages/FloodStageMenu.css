@@ -5,8 +5,8 @@
   margin-top: 10px;
   width: 100%; /* Adjust width to reduce it */
   max-width: 300px; /* Limit maximum width */
-  margin-left: 10px; 
-  margin-right: px;
+  margin-left: 10px;
+  margin-right: auto; /* Fixing the missing 'px' */
   display: flex; /* Prevent expansion */
   flex-direction: column; /* Ensure content stacks vertically */
 }
@@ -15,7 +15,6 @@
   cursor: pointer;
   box-sizing: border-box; /* Include padding/border in width calculation */
   padding: 10px 15px;
-  cursor: pointer;
   color: rgb(0, 0, 0);
   font-size: 16px;
   transition: background-color 0.3s ease, padding 0.2s ease;
@@ -32,8 +31,11 @@
   font-size: 14px;
   line-height: 1.5;
   box-sizing: border-box; /* Include padding in width calculation */
+  max-height: 150px; /* Restrict height */
+  overflow-y: auto; /* Enable scrolling for long content */
 }
 
+/* Color coding for different flood stages */
 .action-stage {
   background-color: #e4e406; /* Yellow */
 }
@@ -54,23 +56,7 @@
   opacity: 0.9;
 }
 
-.accordion-container.action-stage {
-  background-color: #e4e406;
-}
-
-.accordion-container.minor-stage {
-  background-color: #ffaa00;
-}
-
-.accordion-container.moderate-stage {
-  background-color: #ff4500;
-}
-
-.accordion-container.major-stage {
-  background-color: #b604b6;
-}
-
-/* Adjust positioning for mobile */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .accordion-container {
     position: relative;
