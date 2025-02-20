@@ -102,9 +102,19 @@ const FloodGraph = () => {
   const renderCustomShape = (props) => {
     const { cx, cy, fill, payload } = props;
     const isHovered = hoveredPoint === payload.id;
-    return <circle cx={cx} cy={cy} r={isHovered ? 8 : 5} fill={fill} strokeWidth={isHovered ? 2 : 1} />;
+    const isSelected = selectedEvent && selectedEvent.id === payload.id;
+  
+    return (
+      <circle
+        cx={cx}
+        cy={cy}
+        r={isHovered ? 9 : isSelected ? 7 : 5}
+        fill={fill}
+        className="scatter-point"
+      />
+    );
   };
-
+  
   return (
     <div className="flood-graph-container" onClick={handleBackgroundClick}>
       <div className={`scatter-chart-wrapper ${selectedEvent ? "shift-left" : ""}`}>
@@ -149,7 +159,7 @@ const FloodGraph = () => {
 
       {selectedEvent && (
         <div className="event-info-card" onClick={handleEventCardClick}>
-          <h3 className="event-title">GLOF Event Info</h3>
+          <h3 className="event-title"> Flood Event Info</h3>
           <p>
             <strong>Release Start Date:</strong> {selectedEvent.releaseDate}
           </p>

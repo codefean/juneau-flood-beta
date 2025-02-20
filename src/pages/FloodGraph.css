@@ -51,7 +51,13 @@
   height: 100%;
   min-height: 290px;
   max-height: 305px;
+  min-width: 200px; /* Ensures it's readable on small screens */
+  max-width: 300px; /* Prevents it from becoming too wide */
+  width: auto; /* Adapts to content */
+  word-wrap: break-word; /* Ensures long words don’t overflow */
+  overflow: hidden;
 }
+
 
 .event-title {
   width: 100%;
