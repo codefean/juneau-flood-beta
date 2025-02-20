@@ -26,6 +26,7 @@ const FloodGraph = () => {
   const [hoveredPoint, setHoveredPoint] = useState(null);
   const [loading, setLoading] = useState(true);
   const [clickedOnPoint, setClickedOnPoint] = useState(false);
+  const [eventCardColor, setEventCardColor] = useState("#00509e"); // Default trim color
 
   useEffect(() => {
     fetch(S3_CSV_URL)
@@ -43,10 +44,13 @@ const FloodGraph = () => {
             result.data.forEach((row) => {
               const id = row["Crest Date"] + row["Crest Stage D.S. Gage (ft)"]; // Unique identifier
 
+              const stage = parseFloat(row["Crest Stage D.S. Gage (ft)"]);
+              const color = getFloodStageColor(stage);
+
               scatterDataProcessed.push({
                 x: row["Crest Date"],
-                y: parseFloat(row["Crest Stage D.S. Gage (ft)"]),
-                fill: getFloodStageColor(parseFloat(row["Crest Stage D.S. Gage (ft)"])),
+                y: stage,
+                fill: color,
                 id,
               });
 
@@ -57,6 +61,7 @@ const FloodGraph = () => {
                 crestDate: row["Crest Date"],
                 crestStage: row["Crest Stage D.S. Gage (ft)"],
                 impacts: row["Impacts"] || "No impacts reported",
+                color, // Store the flood stage color for dynamic styling
               });
             });
 
@@ -77,6 +82,10 @@ const FloodGraph = () => {
     const matchingEvent = eventCardData.find((event) => event.id === dataPoint.id);
     setSelectedEvent(matchingEvent);
     setClickedOnPoint(true);
+
+    if (matchingEvent) {
+      setEventCardColor(matchingEvent.color); // Set border & hover color dynamically
+    }
   };
 
   const handleBackgroundClick = (e) => {
@@ -158,7 +167,14 @@ const FloodGraph = () => {
       </div>
 
       {selectedEvent && (
-        <div className="event-info-card" onClick={handleEventCardClick}>
+        <div
+          className="event-info-card"
+          onClick={handleEventCardClick}
+          style={{
+            borderRight: `5px solid ${eventCardColor}`,
+            "--hover-color": `${eventCardColor}20`, // Light transparent hover effect
+          }}
+        >
           <h3 className="event-title"> Flood Event Info</h3>
           <p>
             <strong>Release Start Date:</strong> {selectedEvent.releaseDate}

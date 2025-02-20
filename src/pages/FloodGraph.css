@@ -19,7 +19,7 @@
 
 /* Shift Graph Left When Event Card is Visible */
 .scatter-chart-wrapper.shift-left {
-  width: 85%; /* Slightly less than 90% for better spacing */
+  width: 80%; /* Slightly less than 90% for better spacing */
   margin-right: auto;
 }
 
@@ -33,29 +33,29 @@
   color: rgb(0, 0, 0);
 }
 
-/* Flood Event Info Card */
 .event-info-card {
-  width: 15%;
-  background: rgba(250, 249, 249, 0.463);
-  border: 2px solid #0000003c;
+  width: 20%; 
+  background: rgb(249, 249, 249); /* Match .floodcard background */
+  border-right: 5px solid #00509e;
   padding: 15px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
   z-index: 100;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-top: 80px;
-  line-height: 1.2;
+  line-height: 1;
   height: 100%;
   min-height: 290px;
   max-height: 305px;
-  min-width: 200px; /* Ensures it's readable on small screens */
-  max-width: 300px; /* Prevents it from becoming too wide */
+  min-width: 200px; /* Ensures readability on small screens */
+  max-width: 300px;
   width: auto; /* Adapts to content */
-  word-wrap: break-word; /* Ensures long words don’t overflow */
+  word-wrap: break-word;
   overflow: hidden;
 }
 
@@ -64,8 +64,9 @@
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #154f89;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: #000000;
 }
 
 /* Hidden Info Card */
@@ -78,8 +79,13 @@
 /* Hover Effect on Event Card */
 @media (hover: hover) {
   .event-info-card:hover {
-    background-color: #b0baff1a;
+    background-color: #fea8a81a;
   }
+}
+
+/* Dynamic Hover Effect */
+.event-info-card:hover {
+  background-color: var(--hover-color, #fea8a81a);
 }
 
 /* Scatter Point Hover Effect */
