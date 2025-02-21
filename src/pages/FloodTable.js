@@ -96,7 +96,7 @@ const FloodTable = () => {
           {/* Table Title and Subtitle */}
           <h3 className="flood-table-title">Mendenhall Glacial Lake Outburst Flood Events Table</h3>
           <h4 className="flood-table-subtitle">
-            Select Colums To Explore Flood Data
+            Select Columns To Explore Flood Data
           </h4>
   
           <table className="flood-table">
