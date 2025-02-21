@@ -14,7 +14,7 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
           }}
           onClick={(e) => handleMarkerClick(marker, e, imageId)}
         >
-          {index + 1}
+          ?
         </button>
       ))}
       {activeInfo?.imageId === imageId && (
@@ -30,3 +30,4 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
 };
 
 export default TooltipMarker;
+

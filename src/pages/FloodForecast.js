@@ -53,23 +53,30 @@ const FloodPrediction = () => {
 
   const markers = {
     suicideBasin: [
-      { top: "78%", left: "82.5%", text: "1. Check to see when the image was last updated. This website pulls the most recent image." },
-      { top: "5%", left: "80%", text: "2. The latest glacial pool elevation in meters." },
-      { top: "55%", left: "19.5%", text: "3. Years indicate annual peak water levels." },
-      { top: "70%", left: "48.5%", text: "4. Movement of ice can impact perceived water levels." },
+      { top: "76.5%", left: "82.5%", text: "1. Check to see when the image was last updated. This website pulls the most recent image." },
+      { top: "5%", left: "80%", text: "2. Zoomed in elevation info." },
+      { top: "55%", left: "19.5%", text: "3. Current glacial lake water levels" },
+      { top: "70%", left: "48.5%", text: "4. Movement of floating ice can impact water level measurements on the hydrograph." },
     ],
     mendenhallLake: [
-      { top: "97%", left: "47%", text: "Check to see when the graph was created. This website pulls the latest graph." },
-      { top: "19%", left: "50%", text: "Last recorded water level at Mendenhall Lake" },
-      { top: "23.5%", left: "48.5%", text: "Current flood stage if the GLOF occurred. 9ft is the lowest flood stage. For all flood stages click here." },
-      { top: "75%", left: "90%", text: "Today's observation." },
+      { top: "93%", left: "47%", text: "Check to see when the graph was created. This website pulls the latest graph." },
+      { top: "19%", left: "51%", text: "Last recorded water level at Mendenhall Lake" },
+      { top: "22%", left: "48.5%", text: "Current flood stage if the GLOF occurred. 9ft is the lowest flood stage. For all flood stages click here." },
+      { top: "72%", left: "90%", text: "Today's observation." },
     ],
   };
 
   return (
+    
     <div className="flood-tracker" onClick={closeInfoBox}>
-      {showFloodPred && <FloodPred onClose={() => setShowFloodPred(false)} />} 
-     
+
+      <div className="title">
+        <h3>Explore Flood Forecasting</h3>
+      </div>
+      <div className="subheading">
+        <h4>How To Track Suicide Basin & Mendenhall Lake Water Levels</h4>
+      </div>
+
       <div className="flood-content">
   <div className="image-pair-container">
     
@@ -85,12 +92,17 @@ const FloodPrediction = () => {
             className="flood-image suicide-basin-image"
             onError={(e) => (e.target.src = "/fallback-image.jpg")}
           />
+          <p className="image-caption" style={{ marginTop: "-10px" }}>
+            Latest Image of Suicide Basin
+          </p>
+
           <Tooltip
             markers={markers.suicideBasin}
             handleMarkerClick={handleMarkerClick}
             activeInfo={activeInfo}
             imageId="suicideBasin"
           />
+          
         </div>
       )}
     </div>
@@ -105,7 +117,9 @@ const FloodPrediction = () => {
           className="flood-image additional-image"
           onError={(e) => (e.target.src = "/fallback-image.jpg")}
         />
+        <p className="image-caption">Latest Water Elevation Chart for Suicide Basin Glacial Lake</p>
       </div>
+      
     </div>
 
   </div>
@@ -153,6 +167,7 @@ const FloodPrediction = () => {
           className="mendenhall-lake-image"
           onError={(e) => (e.target.src = "/fallback-graph.jpg")}
         />
+        <p className="image-caption">Latest NOAA Hydrograph for Mendenhall Lake</p>
         <Tooltip
           markers={markers.mendenhallLake}
           handleMarkerClick={handleMarkerClick}
@@ -166,7 +181,9 @@ const FloodPrediction = () => {
   {/* Flood Stage Menu (StageInfo.js) - Positioned to the Right */}
   <div className="flood-stage-menu-wrapper">
     <FloodStageMenu />
+    <p className="image-caption">Flood Stage Levels Correspond to Mendenhall Lake Water Levels</p>
   </div>
+  
 </div>
 
 
@@ -188,6 +205,7 @@ const FloodPrediction = () => {
           More Info
         </button>
       </div>
+      {showFloodPred && <FloodPred onClose={() => setShowFloodPred(false)} />} 
     </div>
   );
 };

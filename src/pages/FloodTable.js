@@ -5,8 +5,8 @@ import "./FloodTable.css"; // Import styles
 const S3_CSV_URL = "https://flood-events.s3.us-east-2.amazonaws.com/FloodEvents.csv";
 
 const COLUMN_NAME_MAPPING = {
-  "Release Stage D.S. Gage (ft)": "Release Water Level at Mendenhall Lake (ft)",
-  "D.S. Gage Release Flow (cfs)": "Release Flow Rate at Mendenhall Lake (cfs)",
+  "Release Stage D.S. Gage (ft)": "Pre Flood Water Level at Mendenhall Lake (ft)",
+  "D.S. Gage Release Flow (cfs)": "Pre Flood Flow Rate at Mendenhall Lake (cfs)",
   "Crest Date": "Peak Water Level Date",
   "Crest Stage D.S. Gage (ft)": "Peak Water Level at Mendenhall Lake (ft)",
   "D.S. Gage Crest Flow (cfs)": "Peak Water Level Flow Rate (cfs)",
@@ -93,6 +93,12 @@ const FloodTable = () => {
         <p>Loading data...</p>
       ) : (
         <>
+          {/* Table Title and Subtitle */}
+          <h3 className="flood-table-title">Mendenhall Glacial Lake Outburst Flood Events Table</h3>
+          <h4 className="flood-table-subtitle">
+            Select Colums To Explore Flood Data
+          </h4>
+  
           <table className="flood-table">
             <thead>
               <tr>
@@ -114,12 +120,12 @@ const FloodTable = () => {
                   .map((row, rowIndex) => {
                     const isPreviewRow = !expanded && rowIndex >= visibleCount;
                     let opacity = 1;
-
+  
                     if (isPreviewRow) {
                       const previewIndex = rowIndex - visibleCount;
                       opacity = 0.7 - previewIndex * 0.2;
                     }
-
+  
                     return (
                       <tr key={rowIndex} style={{ opacity, transition: "opacity 0.3s ease-in-out" }}>
                         {headers.map((header, colIndex) => {
@@ -127,7 +133,7 @@ const FloodTable = () => {
                           const cellStyle = isFloodStageColumn
                             ? { backgroundColor: getFloodStageColor(parseFloat(row[header])) }
                             : {};
-
+  
                           return (
                             <td key={colIndex} style={cellStyle}>
                               {row[header] || "—"}
@@ -148,7 +154,7 @@ const FloodTable = () => {
         </>
       )}
     </div>
-  );
+  );  
 };
 
 export default FloodTable;

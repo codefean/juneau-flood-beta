@@ -25,12 +25,22 @@
 
 .flood-graph-title {
   text-align: left;
-  margin-bottom: 1px;
   font-size: 22px;
   font-weight: bold;
   padding-left: 40px;
   margin-left: 30px;
-  color: rgb(0, 0, 0);
+  margin-bottom: 1px;
+  color: #0e2b4a
+}
+
+.flood-graph-subtitle {
+  text-align: left;
+  font-size: 16px;
+  padding-left: 40px;
+  margin-left: 30px;
+  color: #154f89;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .event-info-card {
@@ -47,7 +57,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 80px;
+  margin-top:   100px;
   line-height: 1;
   height: 100%;
   min-height: 290px;
