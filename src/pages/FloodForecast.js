@@ -201,7 +201,7 @@ const FloodPrediction = () => {
             <strong>Monitoring & Forecasting:</strong> The NWS and USGS actively track lake levels and issue flood alerts based on water gage data, satellite imagery, and hydrological models.
           </li>
         </ul>
-        <button className="more-data-button" onClick={() => window.open('https://www.weather.gov/ajk/suicideBasin')}>
+        <button className="more-data-button" onClick={() => window.open('https://waterdata.usgs.gov/monitoring-location/15052500/#dataTypeId=continuous-00065--1654777834&period=P7D&showMedian=false')}>
           More Info
         </button>
       </div>
