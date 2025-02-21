@@ -128,7 +128,7 @@ const FloodGraph = () => {
     <div className="flood-graph-container" onClick={handleBackgroundClick}>
       <div className={`scatter-chart-wrapper ${selectedEvent ? "shift-left" : ""}`}>
         <h3 className="flood-graph-title">Mendenhall Glacial Lake Outburst Flood Events Over Time</h3>
-        <h4 className="flood-graph-subtitle"> Select Ponts To Explore The Data</h4>
+        <h4 className="flood-graph-subtitle"> Select Points To Explore The Data</h4>
         <ResponsiveContainer width="100%" height={400}>
           <ScatterChart margin={{ top: 20, right: 30, left: 10, bottom: 30 }}>
             <CartesianGrid />
