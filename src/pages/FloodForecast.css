@@ -125,16 +125,23 @@ body {
   .suicide-basin-wrapper, .additional-image-wrapper {
     max-width: 100%;
   }
+
+  .image-container, .additional-image-container {
+    max-width: 100%;
+  }
 }
 
 /* Mobile View */
 @media (max-width: 768px) {
   .image-pair-container {
     flex-direction: column;
-    gap: 15px;
   }
 
   .suicide-basin-wrapper, .additional-image-wrapper {
+    max-width: 100%;
+  }
+
+  .image-container, .additional-image-container {
     max-width: 100%;
   }
 
