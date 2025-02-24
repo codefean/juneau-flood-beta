@@ -113,6 +113,8 @@ body {
   .flood-subheading {
     font-size: 1.6rem;
   }
+
+  
 }
 
 /* Mobile-Specific Adjustments */
@@ -126,7 +128,7 @@ body {
   }
 
   .flood-subheading {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .floodcard {
@@ -142,5 +144,22 @@ body {
 
   .floodcard p {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .last-glof,
+  .largest-glof {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .last-glof,
+  .largest-glof {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px;
   }
 }
