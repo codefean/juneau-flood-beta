@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./FloodForecast.css";
 import FloodPred from "./FloodPred";
-import Tooltip from "./Tooltip"; // Import Tooltip component
+import Tooltip from "./Tooltip"; 
 import FloodStageMenu from "./StageInfo"; 
 
 // cd /Users/seanfagan/Desktop/juneau-flood-beta
