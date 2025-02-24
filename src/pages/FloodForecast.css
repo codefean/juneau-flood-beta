@@ -123,7 +123,7 @@ body {
   }
 
   .suicide-basin-wrapper, .additional-image-wrapper {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
@@ -146,8 +146,21 @@ body {
   }
 
   .detail-card {
-    max-width: 90%;
+    max-width: 100%;
     text-align: center;
+  }
+
+  .title h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #0e2b4a;
+  }
+
+  .subheading h4 {
+    text-align: center;
+    font-size: 1rem;
+    color: #295b91;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 
@@ -162,20 +175,11 @@ body {
   text-align: left;
 }
 
-/* Mobile View - Make the Detail Card Fit Better */
-@media (max-width: 768px) {
-  .detail-card {
-    max-width: 95%; /* Reduce width to fit screen */
-    padding: 10px;
-    margin-left: auto; /* Ensure centering */
-    margin-right: auto; /* Ensure centering */
-  }
-}
 
 /* Small Mobile Screens - Remove Extra Left Space */
 @media (max-width: 480px) {
   .detail-card {
-    max-width: 98%; /* Almost full width */
+    max-width: 100%; /* Almost full width */
     padding: 12px;
     margin-left: -10px; /* Remove extra left spacing */
     margin-right: 0; /* Ensure centering */
@@ -211,11 +215,8 @@ body {
 
 /* Mendenhall Lake Section */
 .lake-level-content {
-  display: flex;
-  align-items: stretch;
   width: 100%;
   max-width: 1380px;
-  margin: 0 auto;
   gap: 25px; /* Ensures consistent spacing */
   padding: 10px; /* Adds overall padding */
 }
@@ -269,49 +270,3 @@ body {
   margin: 0 auto;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .lake-level-content {
-    flex-direction: column;
-    align-items: center; /* Match flood-content */
-    gap: 15px;
-  }
-
-  .mendenhall-lake-wrapper, 
-  .flood-stage-menu-wrapper {
-    max-width: 90%; /* Allow full width */
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .lake-level-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .mendenhall-lake-wrapper,
-  .flood-stage-menu-wrapper {
-    max-width: 100%;
-  }
-  
-
-  .flood-stage-menu-wrapper > div {
-    width: 95%; /* Ensure full width */
-    justify-content: flex-start;
-    margin-left: 0; /* Reset margin for small screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .flood-stage-menu-wrapper {
-    width: 100%; /* Slightly smaller than full width for better spacing */
-  }
-}
-
-@media (max-width: 480px) {
-  .flood-stage-menu-wrapper {
-    width: 100%;
-    padding: 0 10px; /* Prevents content from touching screen edges */
-  }
-}

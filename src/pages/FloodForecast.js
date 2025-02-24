@@ -74,7 +74,7 @@ const FloodPrediction = () => {
         <h3>Explore Flood Forecasting</h3>
       </div>
       <div className="subheading">
-        <h4>How To Track Suicide Basin & Mendenhall Lake Water Levels</h4>
+        <h4>How to Track Water Levels</h4>
       </div>
 
       <div className="flood-content">
