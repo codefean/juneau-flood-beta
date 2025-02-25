@@ -53,7 +53,14 @@
   font-size: 1.9rem; /* Increased size for better visibility */
   color: #154f89;
   font-weight: bold;
-  margin-bottom: -10px;
+  margin-bottom: -5px;
+}
+
+/* Decrease font size on smaller screens */
+@media (max-width: 768px) {
+  .glof-h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Default GLOF Section Layout */
@@ -129,6 +136,7 @@
 /* Improve readability on larger screens */
 @media (min-width: 768px) {
   .glof-info-card {
+    max-width: 300px; /* Fix width on larger screens */
     text-align: left;
   }
 }
@@ -232,7 +240,7 @@
   }
 
   .glof-info-card {
-    max-width: 85%; /* Adjusted for smaller screens */
+    max-width: 90%; /* Adjusted for smaller screens */
     text-align: center;
   }
 
@@ -255,7 +263,8 @@
   }
 
   .suicide-basin h2 {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    margin-top: 5px;
   }
 
   .suicide-basin-subheading {
@@ -275,7 +284,7 @@
   }
 
   .glof-info-card {
-    max-width: 100%;
+    max-width: 90%;
     padding: 15px;
   }
 
@@ -321,11 +330,19 @@
 /* Live View Section */
 .live-view-title {
   text-align: center;
-  font-size: 1.9rem; /* Increased size for better visibility */
+  font-size: 1.9rem; /* Default size for larger screens */
   color: #154f89;
   font-weight: bold;
   margin-bottom: -5px;
   margin-top: 50px;
+}
+
+/* Adjust font size for mobile screens */
+@media (max-width: 768px) {
+  .live-view-title {
+    font-size: 1.9rem;
+    margin-top: 10px; /* Smaller size for better readability on mobile */
+  }
 }
 
 .live-view-subheading {

@@ -71,34 +71,6 @@ const images = [
   const timelapse2Url =
     "https://usgs-nims-images.s3.amazonaws.com/timelapse/AK_Glacial_Lake_near_Nugget_LOOKING_UPSTREAM_GLACIER_VIEW/AK_Glacial_Lake_near_Nugget_LOOKING_UPSTREAM_GLACIER_VIEW_720.mp4";
 
-  // Timelapse Info
-  const timelapse1Info = {
-  };
-
-  const timelapse2Info = {
-  };
-
-  // Function to Render Info Tables
-  const renderTable = (info) => (
-    <table className="info-table">
-      <tbody>
-        {Object.entries(info).map(([key, value]) => (
-          <tr key={key}>
-            <th>{key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}</th>
-            <td>
-              {key === "usgsLink" ? (
-                <a href={value} target="_blank" rel="noopener noreferrer" className="info-button">
-                  More Info
-                </a>
-              ) : (
-                value
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
 
   return (
     <div className="suicide-basin-container">
