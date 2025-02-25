@@ -1,0 +1,39 @@
+/* Apply existing flood-events-container styles */
+.suicide-basin-container {
+  padding: 20px;
+  padding-left: max(10px, 2vw);
+  padding-right: max(10px, 2vw);
+  max-width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Title Styling */
+.suicide-basin h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: -10px;
+  font-size: 2.5rem;
+  color: #154f89;
+}
+
+/* Subheading Styling */
+.suicide-basin-subheading {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0e2b4a;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Center the Image Comparison Slider */
+.image-comparison-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 20px auto;
+  overflow: hidden;
+}

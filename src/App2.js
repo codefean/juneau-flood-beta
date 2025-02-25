@@ -1,12 +1,12 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import './styles/App2.css';
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-import FloodLevels from './pages/FloodLevels';
-import FloodForecast from './pages/FloodForecast';
-import FloodEvents from './pages/FloodEvents';
-import GlacierInfo from './pages/GlacierInfo';
+import React from "react";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import "./styles/App2.css";
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import FloodLevels from "./pages/FloodLevels";
+import FloodForecast from "./pages/FloodForecast";
+import FloodEvents from "./pages/FloodEvents";
+import SuicideBasin from "./pages/SuicideBasin";
 
 // Custom hook for setting the document title
 const useDocumentTitle = (title) => {
@@ -17,23 +17,24 @@ const useDocumentTitle = (title) => {
 
 // Wrapper components to set the title for each route
 const FloodLevelsPage = () => {
-  useDocumentTitle('Juneau Flood Risk');
+  useDocumentTitle("Juneau Flood Risk");
   return <FloodLevels />;
 };
 
 const FloodPredictionPage = () => {
-  useDocumentTitle('Flood Forecast');
+  useDocumentTitle("Flood Forecast");
   return <FloodForecast />;
 };
 
 const FloodEventsPage = () => {
-  useDocumentTitle('Flood Events');
+  useDocumentTitle("Flood Events");
   return <FloodEvents />;
 };
 
-const GlacierInfoPage = () => {
-  useDocumentTitle('Glacier Information');
-  return <GlacierInfo />;
+// ✅ Renamed to avoid conflict with the imported SuicideBasin component
+const SuicideBasinPage = () => {
+  useDocumentTitle("Suicide Basin");
+  return <SuicideBasin />;
 };
 
 const App2 = () => {
@@ -47,7 +48,7 @@ const App2 = () => {
           <Route path="/flood-levels" element={<FloodLevelsPage />} />
           <Route path="/flood-forecast" element={<FloodPredictionPage />} />
           <Route path="/flood-events" element={<FloodEventsPage />} />
-          <Route path="/glacier-info" element={<GlacierInfoPage />} />
+          <Route path="/suicide-basin" element={<SuicideBasinPage />} />
         </Routes>
       </div>
     </Router>
@@ -55,3 +56,4 @@ const App2 = () => {
 };
 
 export default App2;
+

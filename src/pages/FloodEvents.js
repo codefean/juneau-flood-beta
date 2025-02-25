@@ -85,7 +85,7 @@ const FloodEvents = () => {
       <div className="flood-cards-container">
       {latestFloodEvent && (
         <div className="floodcard last-glof">
-          <h2>Most Recent Flood Event</h2>
+          <h2 className="flood-card"> Most Recent Flood Event</h2>
           <p><strong>Peak Water Level:</strong> {latestFloodEvent["Peak Water Level at Mendenhall Lake (ft)"]} ft</p>
           <p><strong>Duration:</strong> {latestFloodEvent["Release Start Date"]} -- {latestFloodEvent["Peak Water Level Date"]}</p>
         </div>
@@ -93,7 +93,7 @@ const FloodEvents = () => {
 
       {largestFloodEvent && (
         <div className="floodcard largest-glof">
-          <h2>Largest Flood Event</h2>
+          <h2 className="flood-card">Largest Flood Event</h2>
           <p><strong>Peak Water Level:</strong> {largestFloodEvent["Peak Water Level at Mendenhall Lake (ft)"]} ft</p>
           <p><strong>Duration:</strong> {largestFloodEvent["Release Start Date"]} -- {largestFloodEvent["Peak Water Level Date"]}</p>
         </div>

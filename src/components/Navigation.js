@@ -31,7 +31,7 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/glacier-info" activeClassName="active-link">
+          <NavLink to="/suicide-basin" activeClassName="active-link">
             Suicide Basin
           </NavLink>
         </li>
