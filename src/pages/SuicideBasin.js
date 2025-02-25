@@ -9,9 +9,9 @@ const SuicideBasin = () => {
   return (
     <div className="suicide-basin-container">
       <div className="suicide-basin">
-        <h2>Suicide Basin Glacier Change</h2>
+        <h2>Explore Suicide Basin</h2>
       </div>
-      <p className="suicide-basin-subheading">
+      <p className="suicide-basin-subheading"> Understand How The Glacial Lake Outburst Floods Occur
       </p>
       <div className="image-comparison-container">
         <CompareImage leftImage={beforeImage} rightImage={afterImage} />
