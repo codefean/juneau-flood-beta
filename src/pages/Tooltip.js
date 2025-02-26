@@ -9,9 +9,8 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
           key={index}
           className="info-marker"
           style={{
-            top: marker.top, 
-            left: marker.left,
-            position: "absolute",
+            top: marker.top,  // Position in percentage
+            left: marker.left, // Position in percentage
           }}
           onClick={(e) => handleMarkerClick(marker, e, imageId)}
         >
@@ -21,6 +20,7 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
       {activeInfo?.imageId === imageId && (
         <div
           className="info-box"
+          style={{ top: `${activeInfo.top}px`, left: `${activeInfo.left}px` }}
         >
           {activeInfo.text}
         </div>

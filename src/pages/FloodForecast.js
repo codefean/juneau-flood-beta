@@ -53,10 +53,9 @@ const FloodPrediction = () => {
 
   const markers = {
     suicideBasin: [
-      { top: "76.5%", left: "82.5%", text: "1. Check to see when the image was last updated. This website pulls the most recent image." },
-      { top: "5%", left: "80%", text: "2. Zoomed in elevation info." },
-      { top: "55%", left: "19.5%", text: "3. Current glacial lake water levels" },
-      { top: "70%", left: "48.5%", text: "4. Movement of floating ice can impact water level measurements on the hydrograph." },
+      { top: "76.5%", left: "82.5%", text: "Check to see when the image was last updated. This website pulls the most recent image." },
+      { top: "55%", left: "19.5%", text: "Current glacial lake water levels" },
+      { top: "70%", left: "48.5%", text: "Movement of floating ice can impact water level measurements on the hydrograph." },
     ],
     mendenhallLake: [
       { top: "19%", left: "52%", text: "Last recorded water level at Mendenhall Lake" },
@@ -142,7 +141,7 @@ const FloodPrediction = () => {
             a lower peak lake elevation in 2025 could hold a greater water volume than a peak elevation in 2024.
           </li>
           <li>
-            <strong>Time to Prepare:</strong> Once drainage begins (GLOF starts), floodwaters take approximately one day to reach Mendenhall Lake.
+            <strong>Time to Prepare:</strong> Once drainage begins (GLOF starts), floodwaters take approximately 1-2 days to reach Mendenhall Lake.
           </li>
           <li>
             <strong>Flood Season:</strong> From the start of Summer and into early Fall.
